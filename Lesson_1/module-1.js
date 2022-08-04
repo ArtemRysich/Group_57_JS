@@ -73,31 +73,171 @@
 // console.log(bmi); // 28.8
 
 // Яким буде результат виразів?
+//https://developer.mozilla.org/ru/docs/Web/JavaScript/Equality_comparisons_and_sameness
+//https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String
+// https://ru.wikipedia.org/wiki/%D0%A0%D0%B0%D1%81%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D0%BD%D0%B0%D1%8F_%D0%BB%D0%B0%D1%82%D0%B8%D0%BD%D0%B8%D1%86%D0%B0_%E2%80%94_A
 
-// console.log(10 >= '7');
+// console.log(10 >= '7'); //true
 
-// console.log('2' > '12');
+// console.log('2' > '12'); // true
 
-// console.log('2' < '12');
+// console.log('2' < '12'); //false
 
-// console.log('4' == 4);
+// console.log('4' == 4); //true
 
-// console.log('6' === 6);
+// console.log('6' === 6);//false
 
-// console.log('false' === false);
+// console.log('false' === false); // false
 
-// console.log(1 == true);
+// console.log(1 == true); // true
 
-// console.log(1 === true);
+// console.log(1 === true);//false
 
-// console.log('0' == false);
+// console.log('0' == false);//true
 
-// console.log('0' === false);
+// console.log('0' === false);//false
 
-// console.log('Papaya' < 'papaya');
+// console.log('Papaya' < 'papaya');//true
 
-// console.log('Papaya' === 'papaya');
+// console.log('Papaya' === 'papaya'); // false
 
-// console.log(undefined == null);
+// console.log(undefined == null);//true
 
-// console.log(undefined === null);
+// console.log(undefined === null);//false
+
+
+// Використовуючи конструкцію if..else та prompt, напиши код, який запитуватиме: "Яка офіційна назва JavaScript?". Якщо користувач вводить ECMAScript, то показуй alert з рядком "Вірно!", інакше - "Не знаєте? ECMAScript!"
+
+
+// const value = prompt("Яка офіційна назва JavaScript?").toLocaleLowerCase()
+// const ecma = 'ECMAScript'
+
+// if(value === ecma.toLocaleLowerCase()){
+//     alert("Вірно!")
+// }else{
+//     alert("Не знаєте? ECMAScript!")
+// }
+
+
+
+// Напиши скрипт, який виводить у консоль рядок "Це позитивне число", якщо в prompt користувач ввів число більше за нуль. Якщо було введено нуль, виводь у консоль рядок "Це нуль". Якщо передали від'ємне число, у консолі має бути рядок "Це від'ємне число".
+// const value = Number(prompt('Enter number'))
+// console.log(value);
+// console.log(typeof value);
+
+// if (value > 0) {
+//     console.log("Це позитивне число");
+// } else if (value === 0) {
+//     console.log("Це нуль");
+// } else if (value < 0) {
+//     console.log("Це від'ємне число");
+// } else {
+//     console.log('Ви ввели не число');
+// }
+
+// if (value > 0) {
+//     console.log("Це позитивне число");
+// }
+// if (value === 0) {
+//     console.log("Це нуль");
+// }
+// if (value < 0) {
+//     console.log("Це від'ємне число");
+// }
+// if (isNaN(value)) {
+//     console.log('Ви ввели не число');
+// }
+
+
+// Напиши скрипт який перевіряє чи закінчується значення змінної link символом /. Якщо ні, додай до кінця значення link цей символ
+// let link = 'https://somesite.com/about';
+
+// console.log(link.slice(link.length-1) === '/');
+
+// console.log(link.endsWith('/'));
+// console.log(!false);
+// if (!link.endsWith('/')) {
+//     // link = `${link}/`
+//     // link = link + '/'
+//     link += '/'
+// }
+// console.log(link);
+
+
+
+
+// Напиши скрипт для відображення часу дедлайн здачі проекту. Використовуй конструкцію if...else.
+
+// Якщо до дедлайну 0 днів - виведи рядок "Сьогодні"
+// Якщо до дедлайну 1 день - виведи рядок "Завтра"
+// Якщо до дедлайну 2 дні - виведи рядок "Післязавтра"
+// Якщо до дедлайну 3+ днів - виведи рядок "Дата в майбутньому"
+
+
+// console.log(typeof days);
+// if(days === 0){
+//     console.log("Сьогодні");
+// }else if (days === 1){
+//     console.log("Завтра");
+// }else if (days === 2){
+//     console.log("Післязавтра");
+// }else {
+//     console.log("Дата в майбутньому");
+// }
+// const days = Number(prompt('Enter days'))
+// // console.log(isNaN(days) || Number.isNaN(days));
+// console.log(days);
+
+// switch (days) {
+//     case 0:
+//         console.log("Сьогодні");
+//         break;
+//     case 1:
+//         console.log("Завтра");
+//         break;
+//     case 2:
+//         console.log("Післязавтра");
+//         break;
+//     default:
+//         console.log("Дата в майбутньому");
+// }
+
+
+// Напиши цикл for який виводить у консоль браузера числа за зростанням від min до max, але якщо число кратне 5.
+// const max = 100;
+// const min = 20;
+
+// for (let i = min; i <= max; i += 1) {
+//     console.log(i);
+//     // / оператор ділення
+//     // % оператор залишку від ділення
+//     // if (i % 5 === 0){
+//     //     console.log(i);
+//     // }
+// }
+
+// Створи світлофор
+
+// const color = prompt('Enter color')
+// console.log(color);
+
+// // const test = color || 'DONT WORK!'
+// // console.log(test);
+// const a = new Date().getMilliseconds()
+// console.log();
+// switch (color) {
+//     case 'red':
+//         console.log('STOP!!!')
+//         break;
+//     case 'yellow':
+//         console.log('READY !!!')
+//         break;
+//     case 'green':
+//         console.log('GO !!! || RUN !!!')
+//         break;
+//     default:
+//         console.log('BE CAREFULL !!!')
+// }
+// const b = new Date().getMilliseconds();
+
+// console.log(b - a);
