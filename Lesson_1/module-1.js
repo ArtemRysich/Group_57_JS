@@ -6,8 +6,6 @@
 // const diff =  apples - grapes;
 // console.log(diff)
 
-
-
 // // Заміни вираз перевизначення комбінованим оператором +=.
 
 // let students = 100;
@@ -16,15 +14,11 @@
 
 // console.log(students);
 
-
-
-
 // // Розбери пріоритет операторів в інструкції надання
 //  значення змінної result.
 // const result = 108 + 223 - 2 * 5;
 //                 // 331    -     //    10
 // console.log(result);
-
 
 // // Напиши скрипт, який виводить у консоль заокруглені
 //  вгору/вниз і т.д. Значення змінної value.
@@ -32,13 +26,11 @@
 // та Math.round(). Перевірте, що буде в консолі при
 // значеннях 27.3 і 27.9.
 
-
 // https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Math
 //const value = Math.floor(27.5);// Округлення в низ до цілого числа
 //const value = Math.ceil(27.001) // Округлення до першого більшо числа
 // const value = Math.round(27.5)// Звичайне математичне округлення
 // console.log(value);
-
 
 // // Склади речення за допомогою шаблонних рядків A has B bots in stock, де A, B - змінні вставлені в рядок.
 
@@ -49,18 +41,16 @@
 //const message = companyName + ' has ' + (repairBots + defenceBots) + ' bots in stock';//Старий синтаксис
 // console.log(message); // "Cyberdyne Systems has 200 bots in stock"
 
-
 // Example 6 - Методи рядків та чейнінг
-// Напиши скрипт, який розраховує індекс маси тіла людини. 
+// Напиши скрипт, який розраховує індекс маси тіла людини.
 // Для цього необхідно розділити вагу в кілограмах на квадрат висоти людини за метри.
 
 // Вага та висота зберігаються в змінних weight і height, але не як числа,
-//  а у вигляді рядків (спеціально для завдання). 
-// Нецілі числа можуть бути задані у вигляді 24.7 або 24,7, 
+//  а у вигляді рядків (спеціально для завдання).
+// Нецілі числа можуть бути задані у вигляді 24.7 або 24,7,
 // тобто як роздільник дробової частини може бути кома.
 
 // Індекс масії тіла необхідно округлити до однієї цифри після коми;
-
 
 // let weight = '88,30';
 // Замінюємо кому на крапку
@@ -105,9 +95,7 @@
 
 // console.log(undefined === null);//false
 
-
 // Використовуючи конструкцію if..else та prompt, напиши код, який запитуватиме: "Яка офіційна назва JavaScript?". Якщо користувач вводить ECMAScript, то показуй alert з рядком "Вірно!", інакше - "Не знаєте? ECMAScript!"
-
 
 // const value = prompt("Яка офіційна назва JavaScript?").toLocaleLowerCase()
 // const ecma = 'ECMAScript'
@@ -117,8 +105,6 @@
 // }else{
 //     alert("Не знаєте? ECMAScript!")
 // }
-
-
 
 // Напиши скрипт, який виводить у консоль рядок "Це позитивне число", якщо в prompt користувач ввів число більше за нуль. Якщо було введено нуль, виводь у консоль рядок "Це нуль". Якщо передали від'ємне число, у консолі має бути рядок "Це від'ємне число".
 // const value = Number(prompt('Enter number'))
@@ -148,7 +134,6 @@
 //     console.log('Ви ввели не число');
 // }
 
-
 // Напиши скрипт який перевіряє чи закінчується значення змінної link символом /. Якщо ні, додай до кінця значення link цей символ
 // let link = 'https://somesite.com/about';
 
@@ -163,16 +148,12 @@
 // }
 // console.log(link);
 
-
-
-
 // Напиши скрипт для відображення часу дедлайн здачі проекту. Використовуй конструкцію if...else.
 
 // Якщо до дедлайну 0 днів - виведи рядок "Сьогодні"
 // Якщо до дедлайну 1 день - виведи рядок "Завтра"
 // Якщо до дедлайну 2 дні - виведи рядок "Післязавтра"
 // Якщо до дедлайну 3+ днів - виведи рядок "Дата в майбутньому"
-
 
 // console.log(typeof days);
 // if(days === 0){
@@ -202,7 +183,6 @@
 //         console.log("Дата в майбутньому");
 // }
 
-
 // Напиши цикл for який виводить у консоль браузера числа за зростанням від min до max, але якщо число кратне 5.
 // const max = 100;
 // const min = 20;
@@ -223,21 +203,21 @@
 
 // // const test = color || 'DONT WORK!'
 // // console.log(test);
-// const a = new Date().getMilliseconds()
-// console.log();
-// switch (color) {
-//     case 'red':
-//         console.log('STOP!!!')
-//         break;
-//     case 'yellow':
-//         console.log('READY !!!')
-//         break;
-//     case 'green':
-//         console.log('GO !!! || RUN !!!')
-//         break;
-//     default:
-//         console.log('BE CAREFULL !!!')
-// }
-// const b = new Date().getMilliseconds();
+const a = new Date().getMilliseconds();
+console.log();
+switch (color) {
+  case "red":
+    console.log("STOP!!!");
+    break;
+  case "yellow":
+    console.log("READY !!!");
+    break;
+  case "green":
+    console.log("GO !!! || RUN !!!");
+    break;
+  default:
+    console.log("BE CAREFULL !!!");
+}
+const b = new Date().getMilliseconds();
 
-// console.log(b - a);
+console.log(b - a);
