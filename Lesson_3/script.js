@@ -336,3 +336,412 @@
 // function generateId() {
 //     return '_' + Math.random().toString(36).substr(2, 9);
 // }
+// console.log(generateId());
+
+// console.log(Date.now().toString(36));
+
+
+
+
+
+
+
+
+// -------------------------------Part 2-----------------------------------------//
+
+
+
+
+
+
+
+
+// Розглянути rest в якості параметру замість псевдомасиву arguments
+
+// function foo(...args) {
+//     // console.log(arguments);
+//     // const arr = [...arguments]
+//     console.log(args);
+// }
+// foo(1, 2, 3, 4, 5)
+
+
+
+
+
+
+// Розглянути spread для перетворення з псевдомасиву в масив
+
+// function foo(a,b, ...qwe) {
+// console.log('a',a);
+// console.log('b',b);
+// console.log(arguments);
+// const arr = [...arguments]
+// console.log(arr);
+// console.log('rest', qwe);
+// }
+// foo(1, 2, 3, 4, 5)
+
+
+
+
+
+//  Task 1 (Деструктуризація)
+// Перепиши функцію так щоб вона приймала один об'єкт параметрів замість набору незалежних аргументів.
+
+// function calcBMI({
+//     weight,
+//     height
+// }) {
+//     const numericWeight = Number(weight.replace(',', '.'));
+//     const numericHeight = Number(height.replace(',', '.'));
+//     return Number((numericWeight / numericHeight ** 2).toFixed(1));
+// }
+
+// console.log(calcBMI({
+//     weight: '68,3',
+//     height: '1.65'
+// }));
+// console.log(calcBMI({
+//     weight: '118,3',
+//     height: '1.95'
+// }));
+
+
+
+
+
+
+
+
+//  Task 2 (Деструктуризація)
+// Перепиши функцію так щоб вона приймала один об'єкт параметрів замість набору незалежних аргументів.
+
+// function printContactsInfo({names, phones}) {
+//     const nameList = names.split(',');
+//     const phoneList = phones.split(',');
+//     for (let i = 0; i < nameList.length; i += 1) {
+//         console.log(`${nameList[i]}: ${phoneList[i]}`);
+//     }
+// }
+
+// printContactsInfo({
+//     names:  'Jacob,William,Solomon,Artemis',
+//     phones: '89001234567,89001112233,890055566377,890055566300'
+// });
+
+
+
+
+
+
+
+
+
+
+
+//  Task 3 (Глибока деструктуризація)
+// Перепиши функцію так щоб вона приймала один об'єкт параметрів замість набору незалежних аргументів.
+
+// function getBotReport({companyName, bots : { repairBots, defenceBots}}) {
+//     return `${companyName} has ${repairBots + defenceBots} bots in stock`;
+// }
+
+// console.log(getBotReport({
+//     companyName: 'Cyberdyne Systems',
+//     bots: {
+//         repairBots:   150,
+//         defenceBots:  50,
+//     }
+// }));
+
+
+
+
+
+
+
+
+
+
+
+
+// Task 4 (Деструктуризація)
+// Напишу функцію щоб вона приймала об'єкт параметрів із властивостями companyName і stock і виводила репорт про кількість товарів на складі будь-якої компанії.
+
+// function getStockReport({
+//     companyName,
+//     stock
+// }) {
+//     const values = Object.values(stock)
+//     let total = 0; //undefined
+//     for (const value of values) {
+//         total += value
+//     }
+//     console.log(total);
+//     return `${companyName} has ${total} items in stock`
+// }
+
+// console.log(
+//     getStockReport({
+//         companyName: 'Cyberdyne Systems',
+//         stock: {
+//             repairBots: 150,
+//             defenceBots: 50,
+//         },
+//     }),
+// ); // "Cyberdyne Systems has 200 items in stock"
+
+// console.log(
+//     getStockReport({
+//         companyName: 'Belacci',
+//         stock: {
+//             shoes: 20,
+//             skirts: 10,
+//             hats: 5,
+//         },
+//     }),
+// ); // "Belacci has 35 item in stock"
+
+
+
+
+
+
+
+
+
+
+
+// Task 5 (spread)
+// Доповни функцію createContact(partialContact) так, щоб вона повертала новий об'єкт контакту з доданою властивістю id, а також list зі значенням "default" якщо у partialContact немає такої властивості.
+
+// function createContact(partialContact) {
+//     // console.log(partialContact);
+//     return {
+//         id: generateId(),
+//         list: "default",
+//         ...partialContact,
+//     }
+
+// }
+
+// console.log(
+//     createContact({
+//         name: 'Mango',
+//         email: 'mango@mail.com',
+//         list: 'friends',
+//     }),
+// );
+// console.log(
+//     createContact({
+//         name: 'Poly',
+//         email: 'poly@hotmail.com',
+//     }),
+// );
+
+// function generateId() {
+//     return '_' + Math.random().toString(36).substr(2, 9);
+// }
+
+
+
+
+
+
+
+
+
+
+// Task 6 (rest)
+// Напиши функцію transformUsername(user) так, щоб вона повертала новий об'єкт із властивістю fullName, замість firstName та lastName.
+
+
+// function transformUsername({firstName, lastName, ...qwe}) {
+//     const {
+//         firstName,
+//         lastName,
+//         ...qwe
+//     } = user;
+//     console.log("firstName", firstName);
+//     console.log("lastName", lastName);
+//     console.log("qwe", qwe);
+//     return {
+//         fullName: firstName + lastName,
+//         ...qwe
+
+//     }
+// }
+
+// console.log(
+//     transformUsername({
+//         id: 1,
+//         firstName: 'Jacob',
+//         lastName: 'Mercer',
+//         email: 'j.mercer@mail.com',
+//         friendCount: 40,
+//     }),
+// );
+
+// console.log(
+//     transformUsername({
+//         id: 2,
+//         firstName: 'Adrian',
+//         lastName: 'Cross',
+//         email: 'a.cross@hotmail.com',
+//         friendCount: 20,
+//     }),
+// );
+
+
+
+
+
+
+
+
+
+
+
+
+// const user1 = {
+//     id: 1,
+//     firstName: 'Jacob',
+//     lastName: 'Mercer',
+//     email: 'j.mercer@mail.com',
+//     friendCount: 40,
+// }
+// const linkCopy = user1;
+// console.log(linkCopy, user1 === linkCopy);
+// const copy1 = {...user1}
+// console.log(copy1 === user1);
+
+// const user2 = {
+//     id: 2,
+//     firstName: 'Adrian',
+//     lastName: 'Cross',
+//     email: 'a.cross@hotmail.com',
+//     friendCount: 20,
+// }
+// const arr = [user1, user2]//
+
+
+// function foo(arr) {
+//     for (const user of arr) {
+//         const newObj = {...user}
+//         newObj.fullName = newObj.firstName +" "+newObj.lastName
+//         console.log("before",newObj);
+//         delete newObj.firstName
+//         delete newObj.lastName
+//         console.log("after",newObj);
+//         const keys = Object.keys(newObj)
+//         console.log("keys",keys);
+//     }
+// }
+// foo(arr)
+// console.log(user2);
+// function foo(arr) {
+//     for (let i = 0; i < arr.length; i += 1) {
+//         const newUser = {
+//             ...arr[i]
+//         }
+//         newUser.fullName = newUser.firstName + ' ' + newUser.lastName
+//         arr[i] = newUser
+//         // console.log(user);
+//         // console.log("newUser",newUser);
+//     }
+//     return arr
+// }
+
+
+// console.log(foo(arr));
+// console.log('user1',user1);
+// console.log('user2',user2);
+
+// const email = 'email@l.com'
+
+// const user = {
+//     email: 'some@gm.com',
+//     age: 22
+// }
+
+
+// const {email : emailUser} = user
+// console.log(email);
+
+
+// function foo ({userName} ={}){
+//     console.log(userName);
+// }
+
+// foo()
+
+
+
+// const arr1 = [1, 2, 3, 4]
+// const arr2 = [...arr1]
+// const arr3 = arr1
+
+// console.log(arr1 === arr3);
+
+
+
+
+// function foo ({a,b,c, ...props}){
+//     console.log(props);
+// }
+
+// foo({a:1,b:2,c:3,d:4,e:5})
+
+
+// с конспекта. если было изменено имя переменной и ее значение, почему при вызове firstCoverImage получаем //images-na.ssl-images-amazon.com/images/I/51b5YG6Y1rL.jpg а не "https://via.placeholder.com/640/480"     
+// const firstBook = {
+//     title: "The Last Kingdom",
+//     coverImage: "https://images-na.ssl-images-amazon.com/images/I/51b5YG6Y1rL.jpg",
+// };
+
+// const {
+//     title: firstTitle,
+//     coverImage: firstCoverImage = "https://via.placeholder.com/640/480",
+// } = firstBook;
+
+// console.log(firstTitle); // The Last Kingdom
+// console.log(firstCoverImage); // https://images-na.ssl-images-amazon.com/images/I/51b5YG6Y1rL.jpg
+
+
+// function foo({
+//     name,
+//     age,
+//     weight,
+//     height
+// }) {
+//     console.log(`name ${name}\n age ${age}\n weight${weight}\n height${height} `);
+
+// }
+// foo({
+//     name: 'Artem',
+//     age: 27,
+//     weight: 90,
+//     height: 195
+// })
+
+
+// function foo(a, b) {
+//     console.log(a + b);
+//     return a + b
+// }
+// const result = foo(1, 2)
+
+
+// console.log(foo(1, 2));
+// console.log(result + 5);
+// const currentDate = new Date()
+// const date = new Date('December 17, 1995 03:24:00');
+// const date1 = new Date('December 17, 1992 03:24:00');
+// const date2 = new Date('December 17, 2000 03:24:00');
+// const date3 = new Date('December 17, 2010 03:24:00');
+// // console.log(currentDate.getHours());
+// console.dir(date);
+// console.dir(date1);
+// console.dir(date2);
+// console.dir(date3);
