@@ -23,27 +23,6 @@
 // // // arrow function з НЕ явним поверненням
 // const add = (a, b) => a + b
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // Example 1 - Коллбек функції
 // Напишіть такі функції:
 
@@ -51,57 +30,38 @@
 // logProduct(product) - коллбек, що приймає об'єкт продукту і логує його в консоль
 // logTotalPrice(product) - коллбек, що приймає об'єкт продукту і логує загальну вартість товару в консоль
 
-function createProduct(partialProduct, callback) {
-    const obj = {
-        id: Date.now(),
-        ...partialProduct
-    }
-    console.log('callback', callback);
-}
+// function createProduct(partialProduct, callback) {
+//     const obj = {
+//         id: Date.now(),
+//         ...partialProduct
+//     }
+//     console.log('callback', callback);
+// }
 
-function logProduct(product) {
-    console.log(product);
-}
-console.log('logProduct', logProduct);
-createProduct({
-    name: '🍎',
-    price: 30,
-    quantity: 3
-}, logProduct);
-
-
-console.log('logTotalPrice', logTotalPrice);
-createProduct({
-    name: '🍋',
-    price: 20,
-    quantity: 5
-}, logTotalPrice);
+// function logProduct(product) {
+//     console.log(product);
+// }
+// console.log('logProduct', logProduct);
+// createProduct({
+//     name: '🍎',
+//     price: 30,
+//     quantity: 3
+// }, logProduct);
 
 
+// console.log('logTotalPrice', logTotalPrice);
+// createProduct({
+//     name: '🍋',
+//     price: 20,
+//     quantity: 5
+// }, logTotalPrice);
 
-function logTotalPrice({
-    price,
-    quantity
-}) {
-    console.log(price * quantity);
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// function logTotalPrice({
+//     price,
+//     quantity
+// }) {
+//     console.log(price * quantity);
+// }
 
 // Example 2 - Коллбек функції
 // Додайте об'єкту account  методи ззаписом
@@ -273,15 +233,15 @@ function logTotalPrice({
 // Виконайте рефакторинг коду, використовуючи метод forEach і стрілочні функції.
 
 // const logItems = items => items.forEach(item => console.log(item))
-const items = ['Mango', 'Poly', 'Ajax']
-for(const el of items){
+// const items = ['Mango', 'Poly', 'Ajax']
+// for(const el of items){
 
-}
+// }
 
 
-     items.forEach(function (item, idx, arr) {
-    console.log(item, idx,arr); arr[idx]
-})
+//      items.forEach(function (item, idx, arr) {
+//     console.log(item, idx,arr); arr[idx]
+// })
 
 // function forEach2(arr, callback) {
 //     for (let i = 0; i < arr.length; i += 1) {
@@ -341,9 +301,9 @@ for(const el of items){
 //     for (const item of arr) {
 
 //     }
-arr.forEach(function (item, idx, newArr) {
-    newArr[idx] = 2
-});
+// arr.forEach(function (item, idx, newArr) {
+//     newArr[idx] = 2
+// });
 
 //     // return total / args.length;
 // }
@@ -363,3 +323,494 @@ arr.forEach(function (item, idx, newArr) {
 //     return inside;
 //   }
 // console.log(outside()());
+
+
+
+
+
+
+
+
+// --------------------------------------------------PART 2 ---------------------------------------------//
+
+
+
+// const arr = [1, 5, 9, 7, 2, 3]
+// const response = arr.map((item) => item > 3)
+// console.log(response);
+// const sorted = arr.sort((a, b) => b - a)
+// console.log(sorted);
+// console.log("arr", arr);
+// const filArr = arr.find(item => typeof item === 'object')
+// console.log(filArr);
+
+// const result = arr.reduce((acc, item, index, array) =>{},{})
+
+
+// Колекція об'єктів для всіх прикладів з автомобілями
+const cars = [{
+        make: 'Honda',
+        model: 'CR-V',
+        type: 'suv',
+        amount: 14,
+        price: 24045,
+        onSale: true
+    },
+    {
+        make: 'Honda',
+        model: 'accord',
+        type: 'sedan',
+        amount: 2,
+        price: 22455,
+        onSale: true
+    },
+    {
+        make: 'Honda',
+        model: 'Accord',
+        type: 'sedan',
+        amount: 2,
+        price: 22455,
+        onSale: true
+    },
+    {
+        make: 'Mazda',
+        model: 'Mazda 6',
+        type: 'sedan',
+        amount: 8,
+        price: 24195,
+        onSale: false
+    },
+    {
+        make: 'Mazda',
+        model: 'CX-9',
+        type: 'suv',
+        amount: 7,
+        price: 31520,
+        onSale: true
+    },
+    {
+        make: 'Toyota',
+        model: '4Runner',
+        type: 'suv',
+        amount: 19,
+        price: 34210,
+        onSale: false
+    },
+    {
+        make: 'Toyota',
+        model: 'Sequoia',
+        type: 'suv',
+        amount: 16,
+        price: 45560,
+        onSale: false
+    },
+    {
+        make: 'Toyota',
+        model: 'Tacoma',
+        type: 'truck',
+        amount: 4,
+        price: 24320,
+        onSale: true
+    },
+    {
+        make: 'Ford',
+        model: 'F-150',
+        type: 'truck',
+        amount: 11,
+        price: 27110,
+        onSale: true
+    },
+    {
+        make: 'Ford',
+        model: 'Fusion',
+        type: 'sedan',
+        amount: 13,
+        price: 22120,
+        onSale: true
+    },
+    {
+        make: 'Ford',
+        model: 'Explorer',
+        type: 'suv',
+        amount: 6,
+        price: 31660,
+        onSale: false
+    }
+];
+
+//   Example 1 - Метод map
+// Нехай функція getModels повертає масив моделей (поле моделі) всіх автомобілів.
+// {
+//     make: 'Honda',
+//     model: 'CR-V',
+//     type: 'suv',
+//     amount: 14,
+//     price: 24045,
+//     onSale: true
+// },
+
+// const getModels = arr => {
+// // const models = arr.map((item) => item.model)
+// const models = arr.map(({model}) => model)
+// return models
+// };
+// console.log('cars',cars);
+const getModels = arr => arr.map(({
+    model
+}) => model)
+
+// console.log(getModels(cars));
+
+
+
+
+// Example 2 - Метод map
+// Нехай функція makeCarsWithDiscount повертає новий масив об'єктів із змінeнним значенням властивості price залежно від переданої знижки (%).
+// {
+//     make: 'Honda',
+//     model: 'CR-V',
+//     type: 'suv',
+//     amount: 14,
+//     price: 24045,
+//     onSale: true
+// },
+
+// const makeCarsWithDiscount = (cars, discount) => {
+//     const response = cars.map((car) => {
+//         car.price = car.price - (car.price / 100 * discount)
+//         return car
+//     })
+//     return response
+// };
+// console.log(makeCarsWithDiscount(cars, 6));
+// console.table(makeCarsWithDiscount(cars, 11));
+
+
+
+
+
+// const response = arr.filter((item, index, array))
+// Example 3 - Метод filter
+// Нехай функція filterByPrice повертає масив автомобілів ціна яких менша за значення параметра threshold.
+// {
+//     make: 'Honda',
+//     model: 'CR-V',
+//     type: 'suv',
+//     amount: 14,
+//     price: 24045,
+//     onSale: true
+// },
+
+// const filterByPrice = (cars, threshold) => {
+//     const response = cars.filter(({price}) => price <= threshold)
+//     return response
+// };
+// console.log(filterByPrice(cars, 30000));
+// console.table(filterByPrice(cars, 25000));
+
+
+
+
+
+
+// Example 4 - Метод filter
+// Нехай функція getCarsWithDiscount повертає масив автомобілів властивість onSale яких true.
+// {
+//     make: 'Honda',
+//     model: 'CR-V',
+//     type: 'suv',
+//     amount: 14,
+//     price: 24045,
+//     onSale: true
+// },
+
+
+// const getCarsWithDiscount = cars => {
+//     const response = cars.filter(({
+//         onSale
+//     }) => onSale === true)
+//     return response
+// }
+// const value = 0;//false
+// if(value ){
+//     console.log('YES');
+// }else{
+//     console.log('NO');
+// }
+
+// const value = '';//false
+// if(value ){
+//     console.log('YES');
+// }else{
+//     console.log('NO');
+// }
+
+// const value = ' ';//true
+// if(value ){
+//     console.log('YES');
+// }else{
+//     console.log('NO');
+// }
+
+// const getCarsWithDiscount = cars => {
+//     const response = cars.filter(({onSale}) => onSale)
+//     return response
+// }
+
+// const getCarsWithDiscount = cars => cars.filter(({onSale}) => onSale)
+
+
+
+// console.log(getCarsWithDiscount(cars));
+
+
+
+
+
+// Example 5 - Метод filter
+// Нехай функція getCarsWithType повертає масив автомобілів, тип яких збігається зі значенням параметра type.
+// {
+//     make: 'Honda',
+//     model: 'CR-V',
+//     type: 'suv',
+//     amount: 14,
+//     price: 24045,
+//     onSale: true
+// },
+
+// const getCarsWithType = (cars, type) => {
+//     const response = cars.filter(({type : carType}) => carType === type)
+//     return response
+// }
+
+// const getCarsWithType = (cars, type) => cars.filter(({type : carType}) => carType === type)
+
+
+// console.log(getCarsWithType(cars, 'suv'));
+// console.table(getCarsWithType(cars, 'sedan'));
+
+
+
+
+
+
+// // Example 6 - Метод find
+// Функція getCarByModel знаходить та повертає об'єкт даної моделі авто та повертає його
+// {
+//     make: 'Honda',
+//     model: 'CR-V',
+//     type: 'suv',
+//     amount: 14,
+//     price: 24045,
+//     onSale: true
+// },
+
+// const getCarByModel = (cars, model) => {
+//   return cars.find(car => car.model === model)
+// }
+
+// console.log(getCarByModel(cars, 'F-150'));
+// console.log(getCarByModel(cars, 'CX-9'));
+
+
+
+
+
+
+
+
+// Example 7 - Метод sort
+// Нехай функція sortByAscendingAmount повертає новий масив автомобілів відсортований за збільшенням значення властивості amount.
+// {
+//     make: 'Honda',
+//     model: 'CR-V',
+//     type: 'suv',
+//     amount: 14,
+//     price: 24045,
+//     onSale: true
+// },
+
+// const sortByAscendingAmount = cars => {
+//     const response = cars.sort((current,next) => current.amount - next.amount)
+//     console.log('response', response);
+//     console.log('cars', cars);
+// };
+
+// console.table(sortByAscendingAmount(cars));
+
+
+
+
+// Example 8 - Метод sort
+// Нехай функція sortByDescendingPrice повертає новий масив автомобілів, відсортований за зменшенням значення властивості price.
+// {
+//     make: 'Honda',
+//     model: 'CR-V',
+//     type: 'suv',
+//     amount: 14,
+//     price: 24045,
+//     onSale: true
+// },
+
+// const sortByDescendingPrice = cars => {};
+// console.table(sortByDescendingPrice(cars));
+
+
+
+
+
+// Example 9 - Метод sort
+// Нехай функція sortByModel повертає новий масив автомобілів відсортований за назвою моделі в алфавітному  порядку.
+// {
+//     make: 'Honda',
+//     model: 'CR-V',
+//     type: 'suv',
+//     amount: 14,
+//     price: 24045,
+//     onSale: true
+// },
+// https://unicode-table.com/en/
+// const arr = ['F', 'a', 'G', 'f', 'A', 't', 'T']
+// const arr = [5,2,7,0,367]
+// arr.sort((current, next) => current.localeCompare(next))
+// console.log(arr);
+// const sortByModel = ((cars) => {
+//     const arr = [...cars]
+//     const response = arr.sort((current, next) => current.model.localeCompare(next.model))
+// console.log(cars);
+// console.log('response',response);
+// });
+
+// console.table(sortByModel(cars));
+// console.table(sortByModel(cars));
+
+
+
+
+
+
+
+// Example 10 - Метод reduce
+// Нехай функція getTotalAmount повертає загальну кількість автомобілів (значення властивостей amount).
+// {
+//     make: 'Honda',
+//     model: 'CR-V',
+//     type: 'suv',
+//     amount: 14,
+//     price: 24045,
+//     onSale: true
+// },
+
+// const getModelsOnSale = cars => {
+//    return cars.reduce((acc,{amount}) => acc + amount,0);
+// }
+// console.log(getModelsOnSale(cars));
+
+
+
+
+// Example 11 - Ланцюжки методів
+// Нехай функція getAvailableCarNames повертає масив моделей автомобілів, але тільки тих, що зараз на розпродажі.
+// {
+//     make: 'Honda',
+//     model: 'CR-V',
+//     type: 'suv',
+//     amount: 14,
+//     price: 24045,
+//     onSale: true
+// },
+
+// const getModelsOnSale = cars => cars.filter(({onSale}) => onSale).map(({model}) => model)
+
+// console.log(getModelsOnSale(cars));
+
+
+
+
+
+// Example 12 - Ланцюжки методів
+// Нехай функція getSortedCarsOnSale повертає список (Марка, Модель кількість та Ціна) автомобілів на розпродажі (властивість onSale), відсортованих за зростанням ціни.
+// Кількість автомобілів ХХ:
+// 1...Марка Модель кількість Ціна
+// 2...
+// Якщо не знайдено жодного автомобіля повертається стрінга
+// "За вашим запитом не знайдено жодного автомобіля"
+// {
+//     make: 'Honda',
+//     model: 'CR-V',
+//     type: 'suv',
+//     amount: 14,
+//     price: 24045,
+//     onSale: true
+// },
+
+// const getSortedCarsOnSale = cars => {
+// Мутує похідний масив
+// const response = [...cars].sort((current, next) => current.price - next.price)
+// .filter(({onSale}) => onSale)
+
+// Не мутує похідний масив
+// const response = cars.filter(({
+//         onSale
+//     }) => onSale)
+//     .sort((current, next) => current.price - next.price);
+//     const response = [];
+//     const total = ''
+//     const str = response.reduce((acc, car, idx) => {
+
+//         return acc + `${idx + 1} ${car.make} ${car.model} кількість ${car.amount}
+//          цінa за одиницю ${car.price}$ \n`
+//     }, response.length 
+//     ? `Кількість автомобілів ${response.length}:\n`
+//     : "За вашим запитом не знайдено жодного автомобіля")
+
+//     return str
+
+// };
+
+// console.log(getSortedCarsOnSale(cars));
+
+
+
+// const students = [{
+//         name: "Манго",
+//         courses: ["математика", "фізика"]
+//     },
+//     {
+//         name: "Полі",
+//         courses: ["інформатика", "математика"]
+//     },
+//     {
+//         name: "Ківі",
+//         courses: ["фізика", "біологія"]
+//     },
+// ];
+
+// const allCourses = students.flatMap(student => student.courses);
+// console.log(allCourses);
+// // ['математика', 'фізика', 'інформатика', 'математика', 'фізика', 'біологія'];
+// const uniqueCourses = allCourses.filter((course, index, array) => array.indexOf(course) === index)
+
+// for(const number of arr){
+
+// }
+
+
+// const arr = [1, 2, 3, 4, 5]
+// arr.forEach((number, idx, array) => {
+//     // array[idx] = number * 10;
+//     // array[idx] = array[idx] * 10;
+//     array[idx] *= 10;
+// })
+// console.log(arr);
+
+console.log([...Array(7)].map((__, i) => i + 1));
+
+
+const numbers = [1, 2, 3, 4, 5]
+numbers.map((item, idx) => {
+    return item * 2
+})
+numbers.map(function (item) {
+    return item * 2
+})
