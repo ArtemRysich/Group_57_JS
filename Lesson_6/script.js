@@ -3,7 +3,7 @@
 // const listGet = document.getElementsById('list');
 // console.dir(listGet);
 
-const list = document.querySelector('.list');
+// const list = document.querySelector('.list');
 // // querySelectorAll приклад статичної колекції
 // const staticLi =  document.querySelectorAll('.item');
 // console.log('staticLi',staticLi);
@@ -12,9 +12,9 @@ const list = document.querySelector('.list');
 // console.log('dynemicLi',dynamicLi);
 
 
-const li = document.createElement('li')
+// const li = document.createElement('li')
 // li.classList.add('item')
-list.append(li);
+// list.append(li);
 
 
 // const list = document.querySelector('.list');
@@ -91,3 +91,125 @@ list.append(li);
 // const li = '<li> tomatto </li>'
 // list.innerHTML += li;
 
+
+
+// -------------------------------PART 2 ------------------------//
+// Опції для івентлістнера http://xn--80adth0aefm3i.xn--j1amh/addeventlistener
+// const button = document.querySelector('.hello');
+// const item = document.querySelector('.item');
+
+// let value = 1;
+// button.addEventListener('click', onClick, {
+//     once: true
+// });
+
+// function onClick(evt) {
+//     // console.log(evt);
+//     // console.dir(evt.currentTarget);
+//     // evt.currentTarget.textContent = 'world'
+//     value += 1
+//     console.dir(item.style.fontSize);
+//     item.style.fontSize = value * 10 + 'px'
+//     item.classList.toggle('invalid')
+// }
+
+// item.addEventListener('click', onClick);
+
+// function onClick(evt){
+//     console.dir(evt.currentTarget.textContent);
+// }
+// const input = document.querySelector('.input');
+// input.addEventListener('input', handlerInput);
+
+// function handlerInput(evt){
+
+//     console.dir(evt.currentTarget.value);
+// }
+// const test = document.querySelector(".test");
+// console.log(test);
+// test.addEventListener("click", onClick);
+
+// function onClick(evt) {
+//     evt.preventDefault()
+//     console.dir(evt.currentTarget);
+// }
+
+// const form = document.querySelector('.form');
+// const input = document.querySelector('.input');
+// form.addEventListener('submit', onSubmit);
+
+// function onSubmit(evt) {
+//     evt.preventDefault();
+//     // const {
+//     //     elements: { email, password },
+//     //   } = evt.currentTarget;
+//     const {
+//         email,
+//         password
+//     } = evt.currentTarget.elements;
+
+//     const data = {
+//         id: 'id_1',
+//         email: email.value,
+//         password: password.value,
+//         date: new Date(),
+//     };
+
+//     console.log(data);
+//     alert('Thank you');
+// }
+
+
+// 'keydown'
+// 'keyup'
+// 'keypress'
+
+// const add = document.addEventListener('click', onClick)
+
+
+// function onBoard(evt) {
+//     if (evt.code === "Escape") {
+//         const box = document.querySelector('.box');
+//         box.remove();
+//         // document.removeEventListener('keyup', onBoard);
+//     }
+// }
+
+// function onClick() {
+//     document.body.insertAdjacentHTML('beforeend', '<div class="box"></div>');
+//     document.addEventListener('keyup', onBoard, {
+//         once: true
+//     });
+// }
+
+
+
+// const list = document.querySelector('.list')
+// const arr = ['banana', 'apple'];
+// const items = arr.map(item => {
+//     const li = document.createElement('li');
+//     li.textContent = item;
+//     return li
+// })
+
+// list.append(...items)// ...items => li,li,li
+
+
+// const list = document.querySelector('.list')
+// const arr = ['banana', 'apple'];
+// const fragment = document.createDocumentFragment();
+// console.log(fragment);
+// arr.forEach(item => {
+//     const li = document.createElement('li');
+//     li.textContent = item;
+//     fragment.append(li);
+// })
+// // console.dir(fragment);
+// list.append(fragment)
+
+// const list = document.querySelector('.list')
+// const arr = ['banana', 'apple'];
+// const markup = arr.reduce((acc,item) => acc + `<li>${item}</li>`,'')
+// console.log(markup);
+// // console.log(markup.join(','));
+// list.insertAdjacentHTML('beforeend',markup)
