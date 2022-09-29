@@ -94,25 +94,14 @@ list.addEventListener('click', onItem)
 function onItem(evt) {
     if (evt.target.classList.contains('js-add')) {
         const toBasket = getProduct(evt.target);
-
-        const productInBasket = basket.find(({
-            id
-        }) => id === currentId);
-
-        if (!productInBasket) {
-            toBasket.qty = 1;
-            toBasket.totalSum = toBasket.price
-            basket.push(toBasket);
-        } else {
-            productInBasket.qty += 1;
-            productInBasket.totalSum = productInBasket.qty * productInBasket.price;
-        }
-        console.log(basket);
-        return;
+        const id = Number(evt.target.closest('.js-item').dataset.id)
+        inArray(basket, id, toBasket, 'basket')
     }
 
     if (evt.target.classList.contains('js-wish')) {
-
+        const toWish = getProduct(evt.target);
+        const id = Number(evt.target.closest('.js-item').dataset.id)
+        inArray(wish, id, toWish, 'wish')
     }
 
 }
@@ -125,4 +114,27 @@ function getProduct(elem) {
         id
     }) => id === currentId);
     return product;
+}
+
+function inArray(arr, currentId, product, mod) {
+    product = {...product};
+    const productInBasket = arr.find(({
+        id
+    }) => id === currentId);
+
+    if (!productInBasket) {
+        if (mod === 'basket') {
+            product.qty = 1;
+            product.totalSum = product.price
+        }
+        arr.push(product);
+    } else {
+        if (mod === 'basket') {
+            productInBasket.qty += 1;
+            productInBasket.totalSum = productInBasket.qty * productInBasket.price;
+        }else{
+            alert('Вже додано')
+        }
+    }
+    console.log(arr);
 }
