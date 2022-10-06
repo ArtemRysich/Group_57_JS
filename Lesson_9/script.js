@@ -114,26 +114,103 @@
 
 // }, 1000)
 
-const form = document.querySelector('form');
-form.addEventListener('input', onForm)
-const obj = JSON.parse(localStorage.getItem('obj')) ?? {};
-//  false
-//    undefined
-form.elements.email.value = obj.email ?? '';
-form.elements.message.value = obj.message ?? '';
+// const form = document.querySelector('form');
+// form.addEventListener('input', onForm)
+// const obj = JSON.parse(localStorage.getItem('obj')) ?? {};
+// //  false
+// //    undefined
+// form.elements.email.value = obj.email ?? '';
+// form.elements.message.value = obj.message ?? '';
 
-function onForm(evt) {
-    // console.log(evt.target.value);
-    // console.dir(evt.target.name);
-    obj[evt.target.name] = evt.target.value
-    localStorage.setItem('obj', JSON.stringify(obj))
-    console.log(obj);
+// function onForm(evt) {
+//     // console.log(evt.target.value);
+//     // console.dir(evt.target.name);
+//     obj[evt.target.name] = evt.target.value
+//     localStorage.setItem('obj', JSON.stringify(obj))
+//     console.log(obj);
+// }
+
+
+// setInterval(() => {
+//     console.log(new Date())
+// }, 5000)
+
+
+// const list = document.querySelector('.response')
+
+// console.log(list);
+// // resolve = response
+// // reject = err
+// const promise = new Promise((resolve, reject) => {
+//     const random = Math.random() // 0-1
+//     document.body.style.backgroundColor = 'red'
+//     setTimeout(() => {
+//         if (random > 0.5) {
+//             resolve('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_SjKN5DxsjoA7-np-rigXRiYgMS9nM0sAKUiln4VwMQ&s')
+//         } else {
+//             reject('https://hostiq.ua/wiki/wp-content/uploads/2021/05/03-error-404-not-found-1.png')
+//         }
+//     }, 2500)
+// })
+// console.log(promise);
+// promise
+//     .then((response) => {
+//         list.insertAdjacentHTML('beforeend', `<img src="${response}" alt="cat" width='500px'> `)
+//     })
+//     .catch(err => {
+//         list.insertAdjacentHTML('beforeend', `<img src="${err}" alt="404" width='500px'> `)
+//     })
+//     .finally(() => {
+//         document.body.style.backgroundColor = 'white'
+//     })
+
+// Мікро процеси мають більший пріорітет
+// Мікро процеси
+// Observer
+// Promise
+
+
+
+function serviceApi() {
+    return fetch('https://swapi.dev/api/people/1/')
 }
-
-
-setInterval(() => {
-    console.log(new Date())
-}, 5000)
+serviceApi().then(resp => resp.json()).then(console.log).catch(err=> console.log(err))
 
 
 
+
+
+
+
+
+
+
+// Макро процеси
+// setTimeout
+// setInterval
+// setimmediate
+// requestAnimationFrame
+
+
+
+
+// setTimeout(()=>{console.log('setTimeout')},0)
+// Promise.resolve().then(()=>{console.log("Promise")});
+// Promise.resolve().then(()=>{console.log("Promise2")});
+// console.log('Hello world');
+
+// const promise = new Promise((res, rej) => {
+//     res(10)
+// })
+
+// promise.then((val) =>
+//   new Promise(res => {
+//     res(val * 2)
+//    })
+// ).then(data => {
+//     console.log(data);
+// })
+
+
+// https://learn.javascript.ru/event-loop
+// https://russianblogs.com/article/3184228338/
