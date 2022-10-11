@@ -1,0 +1,12 @@
+.list{
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.item{
+    text-align: center;
+    margin-top: 10px;
+    width: 300px;
+    border: 1px skyblue solid;
+}
